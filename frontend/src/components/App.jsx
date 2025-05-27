@@ -4,7 +4,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
-import { HomePage } from "../pages";
+import { AboutPage } from "../pages";
 import HomeLayout from "../layout/HomeLayout";
 
 const router = createBrowserRouter([
@@ -14,7 +14,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        Component: HomePage,
+        Component: AboutPage,
       },
     ],
   },

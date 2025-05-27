@@ -1,29 +1,71 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-const Card = () => {
+const Card = ({
+  //for image
+  withImg = false,
+  imgSrc = "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
+  imgAlt = "Shoes",
+
+  //for card
+  cardStyle = "w-96",
+  cardTitle,
+  cardTitleStyle,
+  children,
+
+  //for button
+  withBtn = false,
+  btnStyle = "btn btn-primary",
+  btnText = "Submit",
+}) => {
   return (
-    <div className="card bg-base-100 w-96 shadow-sm">
-      <figure>
-        <img
-          src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-          alt="Shoes"
-        />
-      </figure>
+    <div
+      className={`card bg-base-200 shadow-sm ${cardStyle}`}
+    >
+      {withImg && (
+        <figure>
+          <img src={imgSrc} alt={imgAlt} />
+        </figure>
+      )}
       <div className="card-body">
-        <h2 className="card-title">Card Title</h2>
-        <p>
-          A card component has a figure, a body
-          part, and inside body there are title
-          and actions parts
-        </p>
-        <div className="card-actions justify-end">
-          <button className="btn btn-primary">
-            Buy Now
-          </button>
-        </div>
+        {cardTitle && (
+          <h2
+            className={`card-title ${cardTitleStyle}`}
+          >
+            {cardTitle}
+          </h2>
+        )}
+        {children ? (
+          children
+        ) : (
+          <p>
+            If you can see this something went
+            wrong.
+          </p>
+        )}
+        {withBtn && (
+          <div className="card-actions justify-end">
+            <button className={btnStyle}>
+              {btnText}
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
+};
+
+Card.propTypes = {
+  withImg: PropTypes.bool,
+  imgSrc: PropTypes.string,
+  imgAlt: PropTypes.string,
+  cardStyle: PropTypes.string,
+  cardTitle: PropTypes.string,
+  cardTitleStyle: PropTypes.string,
+  children: PropTypes.object,
+  withBtn: PropTypes.bool,
+  btnStyle: PropTypes.string,
+  btnText: PropTypes.string,
 };
 
 export default Card;

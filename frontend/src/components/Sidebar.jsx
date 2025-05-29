@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   BiCurrentLocation,
   BiEnvelope,
@@ -8,17 +9,17 @@ import {
 } from "react-icons/bi";
 const Sidebar = () => {
   return (
-    <div className="sticky top-0 min-h-screen w-64 bg-base-200 p-4">
+    <div className="sticky flex items-center h-[70%] w-full bg-base-200 p-4">
       <div className="flex flex-col items-center justify-center">
-        <div className="avatar">
-          <div className="mask mask-squircle w-56">
+        <div className="avatar flex justify-center">
+          <div className="mask mask-squircle w-3/4">
             <img src="/alex-img.jpg" alt="" />
           </div>
         </div>
         <div className="text text-xl text-center m-4">
           Alexander Edic
         </div>
-        <div className="badge badge-l bg-base-300 shadow-md">
+        <div className="badge badge-lg h-auto w-auto bg-base-300 shadow-md flex items-center justify-center">
           Full-Stack Web Developer
         </div>
         <div className="divider"></div>

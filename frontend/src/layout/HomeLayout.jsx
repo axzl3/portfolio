@@ -1,16 +1,28 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import { Sidebar } from "../components";
+import {
+  Navbar,
+  Sidebar,
+  Card,
+} from "../components";
 
 const HomeLayout = () => {
   return (
-    <div className="flex flex-row min-h-screen">
-      <Sidebar />
-
-      <main className="flex-grow flex items-center justify-center">
-        <div className="stack  w-3/4">
-          <div>a</div>
-          <Outlet />
+    <div className="grid grid-cols-4 min-h-screen">
+      <div className="flex justify-center items-center">
+        <Sidebar />
+      </div>
+      <main className="col-span-3 flex items-center justify-center">
+        <div className="flex flex-col items-center justify-center w-[80%] h-[70%]">
+          <Card
+            cardStyle={
+              "bg-base-200 w-full h-full overflow-auto"
+            }
+            cardBodyStyle={"p-0"}
+          >
+            <Navbar />
+            <Outlet className="flex-grow" />
+          </Card>
         </div>
       </main>
     </div>

@@ -4,7 +4,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
-import { AboutPage } from "../pages";
+import { AboutPage, ResumePage } from "../pages";
 import HomeLayout from "../layout/HomeLayout";
 
 const router = createBrowserRouter([
@@ -15,6 +15,10 @@ const router = createBrowserRouter([
       {
         index: true,
         Component: AboutPage,
+      },
+      {
+        path: "/resume",
+        Component: ResumePage,
       },
     ],
   },

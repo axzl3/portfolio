@@ -12,6 +12,7 @@ const Card = ({
   cardTitle,
   cardTitleStyle,
   children,
+  cardBodyStyle,
 
   //for button
   withBtn = false,
@@ -27,7 +28,9 @@ const Card = ({
           <img src={imgSrc} alt={imgAlt} />
         </figure>
       )}
-      <div className="card-body">
+      <div
+        className={`card-body ${cardBodyStyle}`}
+      >
         {cardTitle && (
           <h2
             className={`card-title ${cardTitleStyle}`}
@@ -62,6 +65,7 @@ Card.propTypes = {
   cardStyle: PropTypes.string,
   cardTitle: PropTypes.string,
   cardTitleStyle: PropTypes.string,
+  cardBodyStyle: PropTypes.string,
   children: PropTypes.object,
   withBtn: PropTypes.bool,
   btnStyle: PropTypes.string,
